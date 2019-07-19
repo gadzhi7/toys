@@ -22,8 +22,10 @@ export default {
 </script>
 
 <style lang="scss">
-  h1 {
-    color: red;
+  @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #272220;
+    background-color: rgba(255, 245, 234, 0.2);
   }
-
 </style>

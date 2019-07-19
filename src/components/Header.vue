@@ -1,6 +1,6 @@
 <template>
-<div class="">
-  Headerrrrrrrrr
+<div class="header">
+  <img src="./../assets/logo.png" alt="логотип">
 </div>
 </template>
 
@@ -16,4 +16,10 @@ export default {
 </script>
 
 <style scoped>
+  .header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 </style>
