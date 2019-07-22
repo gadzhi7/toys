@@ -1,7 +1,7 @@
 <template>
 <div id="app">
-  <!-- <Header></Header>
-  <Navbar></Navbar> -->
+  <!-- <Header></Header> -->
+  <!-- <Navbar></Navbar> -->
   <router-view />
   <Footer></Footer>
 </div>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss">
-  @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap&subset=cyrillic');
   body {
     font-family: 'Roboto', sans-serif;
     color: #272220;

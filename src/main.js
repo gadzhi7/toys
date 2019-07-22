@@ -7,6 +7,9 @@ import 'normalize.css'
 
 Vue.config.productionTip = false
 
+// jquery
+window.$ = window.jQuery = require('jquery')
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
