@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/views/Home'
 import Reviews from '@/views/Reviews'
+import Portfolio from '@/views/Portfolio'
+
+import Smile from '@/views/Smile'
 import Admin from '@/admin/Admin'
 import AdminGoods from '@/admin/AdminGoods'
 
@@ -19,6 +22,16 @@ export default new Router({
       path: '/reviews',
       name: 'reviews',
       component: Reviews
+    },
+    {
+      path: '/portfolio',
+      name: 'portfolio',
+      component: Portfolio
+    },
+    {
+      path: '/smile',
+      name: 'smile',
+      component: Smile
     },
     {
       path: '/admingoods',
