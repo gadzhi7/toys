@@ -32,11 +32,12 @@
 
   </div>
   <div class="nav_links">
-    <a href="">Home</a>
-    <a href="">HOME SHOP</a>
-    <a href="">PAGES</a>
-    <a href="">SHORTCODES</a>
-    <a href="">POST TYPES</a>
+    <router-link :to="{ name: 'home'}">Главная</router-link>
+    <router-link :to="{ name: 'reviews'}">Отзывы</router-link>
+    <a href="#">Home</a>
+    <a href="#">HOME SHOP</a>
+    <a href="#">PAGES</a>
+    <a href="#">POST TYPES</a>
   </div>
   <div class="nav_basket">
     <a href="">

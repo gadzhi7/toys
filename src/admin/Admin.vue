@@ -1,8 +1,8 @@
 <template>
 <div class="">
   Admin
-  <router-link :to="{ name: 'Home'}">Главная</router-link>
-  <router-link :to="{ name: 'AdminGoods'}">Список</router-link>
+  <router-link :to="{ name: 'home'}">Главная</router-link>
+  <router-link :to="{ name: 'adminGoods'}">Список</router-link>
 </div>
 </template>
 
