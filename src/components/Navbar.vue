@@ -75,6 +75,7 @@ export default {
     -webkit-box-shadow: 0px 10px 53px -5px rgba(0,0,0,0.13);
     -moz-box-shadow: 0px 10px 53px -5px rgba(0,0,0,0.13);
     box-shadow: 0px 10px 53px -5px rgba(0,0,0,0.13);
+    flex: 0 0 auto;
   }
 
   .nav_soc {

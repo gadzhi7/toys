@@ -1,11 +1,13 @@
 <template lang="html">
   <div class=".reviews_wrapper">
-    <BreadCrumbs #breadcrubs>Отзывы</BreadCrumbs>
+    <!-- <BreadCrumbs #breadcrubs>Отзывы</BreadCrumbs> -->
     <div class="review">
+      <input type="file" name="" value="file">
       <template v-for="(row, index) in groupedItems">
         <div class="review_row" :key="index">
           <div class="review_item" v-for="(item, i) in row" :key="i">
-            <img class="review_img" :src="item.img" :alt="item.name">
+            <!-- <img class="review_img" :src="item.img" :alt="item.name"> -->
+            <img class="review_img" :src="item.image" :alt="item.name">
             <div class="review_block">
               <div class="review_name">{{item.name}}</div>
               <div class="review_text" :title="item.review">{{item.review.length > 150 ? item.review.slice(0, 150) + '...' : item.review}}</div>
@@ -20,10 +22,48 @@
 <script>
 import BreadCrumbs from '../components/BreadCrumbs'
 
+/* eslint-disable */
+import firebase from "firebase/app";
+import "firebase/database";
+import "firebase/storage";
+
+firebase.initializeApp({
+  apiKey: 'AIzaSyAjUTnfPQ9vvVGhIyKNXePXkx3uNqdK3GY',
+  authDomain: 'toys-plusha.firebaseapp.com',
+  databaseURL: 'https://toys-plusha.firebaseio.com',
+  projectId: 'toys-plusha',
+  storageBucket: 'toys-plusha.appspot.com',
+  messagingSenderId: '69113303958',
+  appId: '1:69113303958:web:4a87eb183e37622f'
+})
+
+const reviewRef = firebase.database().ref("reviews");
+// firebase.storage().ref().child('reviews/22918-NU6SNY.jpg').getDownloadURL().then(function(url) {
+//     console.log(url)
+// });
+
+var storageRef = firebase.storage().ref();
+var mountainsRef = storageRef.child('reviews/mountains.jpg');
+
 export default {
   name: 'Reviews',
+  firebase: {
+    // reviews: reviewFromDatabase
+  },
+  created () {
+    reviewRef.once("value", reviews => {
+      reviews.forEach(review => {
+        this.review.push({
+          id: review.ref.key,
+          name: review.child("name").val(),
+          review: review.child("review").val()
+        });
+      });
+    });
+  },
   data () {
     return {
+      review: [],
       reviews: [
         {
           img: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAMFBMVEXQ0NCqqKi6ubnBwMCnpaXPz8+wrq64trbHxsatq6vMzMy1s7PLysqrqanEw8O/vb21desJAAACvUlEQVR4nO3a3ZKrIBBG0WgQFYy8/9tOIpqTiS1mNHWkrb2q5mZyw1f8tcDlAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsJUL5VxwRzfrazpvTDFnjO+Obtp3dEK6ySkidrdEwtsZRmopjdAnf3Tz9qtS+e6qoxu423Ul4fXoBu5WrySsj27gXm4lYGGao5u4RdX3067u1xIW/lkBNFrmpAtW3OFXe9NYHWVOY7fEG0NaBWM2VcF8Ivsqx9mdCW3uEdMVzAdM7lXOznwPR0dI67+QsD86RFL4QsJwdIikMt14W4cQ6pXFqDw6RFIqoX/u5y5Z6mhN6H/v5c1yRp0J2/lH0rU9U0Ir1ZtLxYHGhK1cUDu5FxUmbKdCzDXBWx+aKXAnRtSX0ExzsLfFo6YzhZ029atU4+lLaONPzv+LY/zYjdJU1JcwdtjbujKuPVKVpy6hH84mqvptQNr4b2Fb1JbQxDJz3lmxa/v5TFSXcBiO1XzCtUMndvoTtsP/3TxIjC6sNdoSxk/2ICSMw3d+YqwtYTzTlk6+l345T0K78Mt5Ep6rD4XybCzm9CeMa2kjJIyfxPPiW1tCE69b5rVL3A8r/fvhOBiXahph+GpLON3Uv9Wl09H2CerSoojzzbWvEc14PdEIDzX0JYxrzaV7XTXr8bNfOnHTl9BMX/RNMdycGnML422v8GWhMeE0Tu+6UNd1eN6fneWc5uUo6jc5oMqERSvdJy0E1JmwuM0j9qc6837sf2/3Fu/nNuoT3tnSVVV1uf+50iYeLOpN+DgK9r70Ph4MK0249k7vE3knbL6QMO9HQwvXSX+xcFGVjf3vafIepOLR79/Y7B8o7p2Jec/Cgdv1NjHv50KjKtjWbNHakP0QHbnuukWX+SoKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwP/0AAegXtE+/NFIAAAAASUVORK5CYII=',
@@ -52,12 +92,12 @@ export default {
     groupedItems () {
       // eslint-disable-next-line
       let grouped = [], index = -1
-      for (let i = 0; i < this.reviews.length; i++) {
+      for (let i = 0; i < this.review.length; i++) {
         if (i % 2 === 0) {
           index++
           grouped[index] = []
         }
-        grouped[index].push(this.reviews[i])
+        grouped[index].push(this.review[i])
       }
       return grouped
     }

@@ -55,6 +55,7 @@ export default {
 
 <style scoped lang="scss">
 .instagram_wrapper {
+  flex: 0 0 auto;
   height: 300px;
   position: relative;
   overflow: hidden;

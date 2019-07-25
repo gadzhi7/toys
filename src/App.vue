@@ -1,5 +1,5 @@
 <template>
-<div id="app">
+<div id="app" ref="app">
   <!-- <Header></Header> -->
   <Navbar></Navbar>
   <section>
@@ -10,7 +10,8 @@
       <router-view />
     </transition>
   </section>
-  <!-- <Footer></Footer> -->
+  <Footer v-if="!admin"></Footer>
+  <AdminFooter v-else></AdminFooter>
 </div>
 </template>
 
@@ -18,12 +19,36 @@
 import Header from './components/Header'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import AdminFooter from './admin/AdminFooter'
 export default {
   name: 'App',
+  data () {
+    return {
+      admin: false
+    }
+  },
   components: {
     Header,
     Navbar,
-    Footer
+    Footer,
+    AdminFooter
+  },
+  mounted () {
+    window.location.pathname.indexOf('admin') !== -1 ? this.admin = true : this.admin = false
+    this.changeBackground(this.$refs.app)
+  },
+  updated () {
+    window.location.pathname.indexOf('admin') !== -1 ? this.admin = true : this.admin = false
+    this.changeBackground(this.$refs.app)
+  },
+  methods: {
+    changeBackground (elem) {
+      if (this.admin) {
+        elem.style.backgroundColor = 'rgb(252, 243, 255)'
+      } else {
+        elem.style.backgroundColor = 'rgba(255, 245, 234, 0.2)'
+      }
+    }
   }
 }
 </script>
@@ -33,11 +58,13 @@ export default {
   @import url('https://fonts.googleapis.com/css?family=Prata&display=swap');
 
   html, body {
+    min-height: 100vh;
     height: 100%;
   }
 
   #app {
     font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
     height: 100%;
     color: #272220;
     background-color: rgba(255, 245, 234, 0.2);

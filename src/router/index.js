@@ -5,8 +5,10 @@ import Reviews from '@/views/Reviews'
 import Portfolio from '@/views/Portfolio'
 
 import Smile from '@/views/Smile'
+
 import Admin from '@/admin/Admin'
-import AdminGoods from '@/admin/AdminGoods'
+import AddToys from '@/admin/AddToys'
+import AdminReviews from '@/admin/AdminReviews'
 
 Vue.use(Router)
 
@@ -34,9 +36,14 @@ export default new Router({
       component: Smile
     },
     {
-      path: '/admingoods',
-      name: 'adminGoods',
-      component: AdminGoods
+      path: '/adminreviews',
+      name: 'adminreviews',
+      component: AdminReviews
+    },
+    {
+      path: '/adminaddtoys',
+      name: 'addtoys',
+      component: AddToys
     },
     {
       path: '/admin',
