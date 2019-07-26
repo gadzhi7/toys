@@ -43,7 +43,6 @@
 
 <script>
 import firebase from 'firebase/app'
-// import 'firebase/database'
 
 const toysRef = firebase.database().ref('toys')
 const toysImageRef = firebase.storage().ref('toys')

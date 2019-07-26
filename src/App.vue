@@ -1,6 +1,6 @@
 <template>
 <div id="app" ref="app">
-  <!-- <Header></Header> -->
+  <Header></Header>
   <Navbar></Navbar>
   <section>
     <transition
@@ -10,8 +10,8 @@
       <router-view />
     </transition>
   </section>
-  <!-- <Footer v-if="!admin"></Footer>
-  <AdminFooter v-else></AdminFooter> -->
+  <Footer v-if="!admin"></Footer>
+  <AdminFooter v-else></AdminFooter>
 </div>
 </template>
 
