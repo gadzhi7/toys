@@ -20,6 +20,20 @@ import Header from './components/Header'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import AdminFooter from './admin/AdminFooter'
+
+import firebase from 'firebase/app'
+import 'firebase/database'
+import 'firebase/storage'
+
+firebase.initializeApp({
+  apiKey: 'AIzaSyAjUTnfPQ9vvVGhIyKNXePXkx3uNqdK3GY',
+  authDomain: 'toys-plusha.firebaseapp.com',
+  databaseURL: 'https://toys-plusha.firebaseio.com',
+  projectId: 'toys-plusha',
+  storageBucket: 'toys-plusha.appspot.com',
+  messagingSenderId: '69113303958',
+  appId: '1:69113303958:web:4a87eb183e37622f'
+})
 export default {
   name: 'App',
   data () {

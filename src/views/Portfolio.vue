@@ -24,7 +24,6 @@ import firebase from 'firebase/app'
 import BreadCrumbs from './../components/BreadCrumbs'
 
 const toysRef = firebase.database().ref('toys')
-const toysImageRef = firebase.storage().ref('toys')
 
 export default {
   name: 'Portfolio',
