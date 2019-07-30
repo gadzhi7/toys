@@ -19,10 +19,13 @@
     </div>
     <router-link class="button" :to="{ name: 'portfolio'}">Показать все</router-link>
   </div>
+  <Instagram></Instagram>
 </div>
 </template>
 
 <script>
+import Instagram from './../components/Instagram'
+
 export default {
   name: 'Home',
   data () {
@@ -50,6 +53,9 @@ export default {
         }
       ]
     }
+  },
+  components: {
+    Instagram
   }
 }
 </script>
