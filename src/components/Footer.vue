@@ -68,12 +68,19 @@ export default {
   &_link {
     width: 16.66%;
     height: 100%;
+    overflow: hidden;
 
     img {
       object-fit: cover;
       object-position: center;
       width: 100%;
       height: 100%;
+      transition: 0.7s;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+      transition: 0.7s;
     }
   }
 

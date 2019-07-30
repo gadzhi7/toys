@@ -27,7 +27,7 @@ export default new Router({
       component: Reviews
     },
     {
-      path: '/portfolio',
+      path: '/toys',
       name: 'portfolio',
       component: Portfolio
     },
