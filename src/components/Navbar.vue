@@ -35,7 +35,7 @@
     <router-link :to="{ name: 'home'}">Главная</router-link>
     <router-link :to="{ name: 'portfolio'}">Портфолио</router-link>
     <router-link :to="{ name: 'reviews'}">Отзывы</router-link>
-    <a href="#">HOME SHOP</a>
+    <router-link :to="{ name: 'about'}">Обо мне</router-link>
     <a href="#">PAGES</a>
     <a href="#">POST TYPES</a>
   </div>

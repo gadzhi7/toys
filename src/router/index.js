@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/views/Home'
 import Reviews from '@/views/Reviews'
 import Portfolio from '@/views/Portfolio'
+import About from '@/views/About'
 
 import Smile from '@/views/Smile'
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/portfolio',
       name: 'portfolio',
       component: Portfolio
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About
     },
     {
       path: '/smile',
