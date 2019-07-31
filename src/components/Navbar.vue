@@ -135,4 +135,9 @@ export default {
     margin: 0 8px;
   }
 
+  a.router-link-exact-active {
+    color: #d68662;
+    transition: 0.3s;
+  }
+
 </style>

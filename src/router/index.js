@@ -42,19 +42,21 @@ export default new Router({
       component: Smile
     },
     {
-      path: '/adminreviews',
+      path: '/admin',
+      name: 'admin',
+      component: Admin
+    },
+    {
+      path: '/admin/adminreviews',
       name: 'adminreviews',
       component: AdminReviews
     },
     {
-      path: '/adminaddtoys',
+      path: '/admin/adminaddtoys',
       name: 'addtoys',
       component: AddToys
     },
-    {
-      path: '/admin',
-      name: 'admin',
-      component: Admin
-    }
+    { path: '/404', name: '404', component: () => import('@/views/404') },
+    { path: '*', redirect: '/404' }
   ]
 })

@@ -7,7 +7,9 @@
       name="slide-left"
       mode="out-in"
     >
-      <router-view />
+      <!-- <keep-alive> -->
+        <router-view />
+      <!-- </keep-alive> -->
     </transition>
   </section>
   <Footer v-if="!admin"></Footer>

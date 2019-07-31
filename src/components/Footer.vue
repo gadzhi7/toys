@@ -6,9 +6,10 @@
   <div class="footer_inner">
     <p class="footer_text">Игрушки плюша / © Copyright by <a href="http://gkhabada.h1n.ru" target="_blank">gkhabada</a> {{new Date().getFullYear()}}г.</p>
     <div class="footer_links">
-      <a href="">ABOUT</a>
-      <a href="">PORTFOLIO</a>
-      <a href="">BLOG</a>
+      <router-link :to="{ name: 'home'}">Главная</router-link>
+      <router-link :to="{ name: 'portfolio'}">Портфолио</router-link>
+      <router-link :to="{ name: 'reviews'}">Отзывы</router-link>
+      <router-link :to="{ name: 'about'}">Обо мне</router-link>
       <a href="">SHOP</a>
       <a href="">CONTACTS</a>
     </div>
@@ -89,4 +90,10 @@ export default {
     opacity: 1;
   }
 }
+
+a.router-link-exact-active {
+  opacity: 1;
+  transition: 0.3s;
+}
+
 </style>

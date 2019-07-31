@@ -1,6 +1,5 @@
 <template lang="html">
   <div class="">
-    Добавить пагинацию и сколько товаров отображать
     <BreadCrumbs #breadcrubs>Игрушки</BreadCrumbs>
     <div class="portfolio">
       <h1>Portfolio</h1>
@@ -20,6 +19,7 @@
   </div>
 </template>
 
+<!-- Добавить пагинацию и сколько товаров отображать -->
 <script>
 import firebase from 'firebase/app'
 import BreadCrumbs from './../components/BreadCrumbs'
