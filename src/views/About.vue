@@ -2,7 +2,7 @@
   <div>
     <BreadCrumbs #breadcrubs>Обо мне</BreadCrumbs>
     <div class="about">
-      <h1 class="about_name">Хатима</h1>
+      <h1 class="title">Хатима</h1>
       <h2 class="about_profession">Вязание</h2>
       <div class="about_inner">
         <div class="about_info">
@@ -16,7 +16,7 @@
             <p>Likes: <span>15</span></p>
             <p>Address: <span>Махачкала</span></p>
             <p>Phone: <span>+1 222 333 444</span></p>
-            <p>Email: <span>Khotochka@gmail.com</span></p>
+            <p>Email: <span>google@gmail.com</span></p>
             <p>Categories: <span>Вязание</span></p>
           </div>
           <div class="about_details_category">
@@ -73,32 +73,8 @@ export default {
     border: 1px solid rgb(235, 235, 235);
     color: #272220;
 
-    &_name {
-      font-family: 'Prata', serif;
-      font-size: 30px;
-      font-weight: 100;
-      text-align: center;
-      width: fit-content;
-      padding: 0 80px;
-      margin: 0 auto;
-      position: relative;
-
-      &:after, &:before {
-        content: '';
-        width: 50px;
-        height: 1px;
-        background-color: #dbdbdb;
-        position: absolute;
-        top: 15px;
-      }
-
-      &:after {
-        right: 0;
-      }
-
-      &:before {
-        left: 0;
-      }
+    .title {
+      margin-top: 0;
     }
 
     &_profession {

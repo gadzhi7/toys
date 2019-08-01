@@ -8,7 +8,6 @@
       <router-link :to="{ name: 'addtoys'}">Портфолио</router-link>
       <router-link :to="{ name: 'adminreviews'}">Отзывы</router-link>
       <router-link :to="{ name: 'admintable'}">Таблица с игрушками</router-link>
-      <a href="">CONTACTS</a>
     </div>
   </div>
 </footer>
@@ -75,5 +74,10 @@ export default {
     transition: 0.3s;
     opacity: 1;
   }
+}
+
+a.router-link-exact-active {
+  opacity: 1;
+  transition: 0.3s;
 }
 </style>

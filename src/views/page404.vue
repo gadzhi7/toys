@@ -1,6 +1,6 @@
 <template lang="html">
-  <div class="notfound">
-    <div @mousemove="mouseMove($event)">
+  <div class="notfound" @mousemove="mouseMove($event)">
+    <div>
       <div class="page404">
         <div class="page404_info">
           <h1>ПЕЙДЖ НОТ ФАУНД</h1>

@@ -11,15 +11,13 @@ Vue.config.productionTip = false
 window.$ = window.jQuery = require('jquery')
 
 router.beforeEach((to, from, next) => {
-  if (to.path.indexOf !== -1) {
+  if (to.path.indexOf('admin') !== -1) {
     let signIn = localStorage.getItem('signIn')
     if (signIn === 'ILoveYou') {
-
+      next()
+    } else {
+      next('/')
     }
-    console.log('to', to)
-    console.log('from', from)
-
-    next()
   } else {
     next()
   }

@@ -17,6 +17,7 @@
 
 <script>
 import firebase from 'firebase/app'
+import router from './../router'
 
 export default {
   name: 'login',
@@ -32,6 +33,7 @@ export default {
         .then(function (data) {
           if (data.operationType === 'signIn') {
             localStorage.setItem('signIn', 'ILoveYou')
+            router.push({ name: 'admin' })
           } else {
             alert('Неудалось войти.')
           }
@@ -147,6 +149,7 @@ export default {
         width: 100%;
         box-sizing: border-box;
         height: 45px;
+        text-indent: 15px;
       }
 
     }

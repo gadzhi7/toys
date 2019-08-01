@@ -1,22 +1,19 @@
 <template>
 <div class="home">
-  <h1>Home</h1>
-  логин  
-  таблица,
+  <h1>Игрушки ручной работы</h1>
+  <!-- таблица,
   скиллс,
   адаптив,
   заполнить обо мне,
-  вывести последние 4 игрушки на главную,
   текст в футере,
-  загрузка между роутами,
-  ссылки админ
+  загрузка между роутами -->
   <div class="banner">
     <img src="" alt="">
     <h5>Игрушки и другие товары ручной работы</h5>
     <h6>Оригинальные товары связанные с любовью</h6>
     <router-link class="button" :to="{ name: 'portfolio'}">Посмотреть</router-link>
   </div>
-  <div class="skills">
+  <!-- <div class="skills">
     <h3>Скиллы <a href="https://handmade-shop.cmsmasters.net/counters-progress-bars/" target="_blank">ссылка</a></h3>
     <div class="skills_items">
       <div class="skills_item">
@@ -34,12 +31,12 @@
         <p class="skill_text"></p>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="popular">
     <h5>заказать товары ручной работы</h5>
-    <h2>Популярные</h2>
+    <h2 class="title">Последние работы</h2>
     <div class="popular_items">
-      <div class="popular_item" v-for="(toy, index) in toys.slice(0, 4)" :key="index">
+      <div class="popular_item" v-for="(toy, index) in toys.reverse().slice(0, 4)" :key="index">
         <img :src="toy.image" :alt="toy.name">
         <h3 class="popular_item_name">{{toy.name}}</h3>
         <p class="popular_item_price">{{toy.text.length > 40 ? toy.text.substring(0, 40) + '...' : toy.text }}</p>
@@ -47,37 +44,37 @@
     </div>
     <router-link class="button" :to="{ name: 'portfolio'}">Показать все</router-link>
   </div>
+  <Instagram></Instagram>
 </div>
 </template>
 
 <script>
+import Instagram from './../components/Instagram'
+import firebase from 'firebase/app'
+
+const toysRef = firebase.database().ref('toys')
+
 export default {
   name: 'Home',
   data () {
     return {
-      toys: [
-        {
-          name: 'тест',
-          text: 'тестовое описание тестовое описание тестовое описание тестовое описание тестовое о описание тестовое описание тест описание тестовое описание тест описание тестовое описание тест описание тестовое описание тест описание тестовое описание тест описание тестовое описание тестписание тестовое описание',
-          image: 'https://handmade-shop.cmsmasters.net/wp-content/uploads/2015/05/2-1-580x480.jpg'
-        },
-        {
-          name: 'тест',
-          text: 'тестовое описание тестовоописание',
-          image: 'https://handmade-shop.cmsmasters.net/wp-content/uploads/2015/05/2-1-580x480.jpg'
-        },
-        {
-          name: 'тест',
-          text: 'тестовое писание тестовое описание',
-          image: 'https://handmade-shop.cmsmasters.net/wp-content/uploads/2015/05/2-1-580x480.jpg'
-        },
-        {
-          name: 'тест',
-          text: 'тестовое описание теписание',
-          image: 'https://handmade-shop.cmsmasters.net/wp-content/uploads/2015/05/2-1-580x480.jpg'
-        }
-      ]
+      toys: []
     }
+  },
+  created () {
+    toysRef.once('value', toys => {
+      toys.forEach(toy => {
+        this.toys.push({
+          id: toy.ref.key,
+          name: toy.child('name').val(),
+          text: toy.child('text').val(),
+          image: toy.child('image').val()
+        })
+      })
+    })
+  },
+  components: {
+    Instagram
   }
 }
 </script>
@@ -86,6 +83,34 @@ export default {
   .home {
     color: #272220;
     position: relative;
+
+    h1 {
+      font-family: 'Prata', serif;
+      font-size: 50px;
+      font-weight: 100;
+      text-align: center;
+      width: fit-content;
+      padding: 0 110px;
+      margin: 50px auto;
+      position: relative;
+
+      &:after, &:before {
+        content: '';
+        width: 80px;
+        height: 1px;
+        background-color: #dbdbdb;
+        position: absolute;
+        top: 25px;
+      }
+
+      &:after {
+        right: 0;
+      }
+
+      &:before {
+        left: 0;
+      }
+    }
 
     .banner {
       max-width: 1200px;
@@ -123,40 +148,15 @@ export default {
         font-weight: 600;
       }
 
-      h2 {
-        font-family: 'Prata', serif;
-        font-size: 30px;
-        font-weight: 100;
-        text-align: center;
-        width: fit-content;
-        padding: 0 80px;
-        margin: 0 auto 30px;
-        position: relative;
-
-        &:after, &:before {
-          content: '';
-          width: 50px;
-          height: 1px;
-          background-color: #dbdbdb;
-          position: absolute;
-          top: 15px;
-        }
-
-        &:after {
-          right: 0;
-        }
-
-        &:before {
-          left: 0;
-        }
-
-      }
-
       &_items {
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
         list-style: none;
+      }
+
+      .title {
+        margin-top: 0;
       }
 
       &_item {

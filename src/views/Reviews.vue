@@ -1,6 +1,7 @@
 <template lang="html">
   <div class=".reviews_wrapper">
     <BreadCrumbs #breadcrubs>Отзывы</BreadCrumbs>
+    <h2 class="title">Отзывы</h2>
     <div class="review" v-if="reviews.length">
       <template v-for="(row, index) in groupedItems">
         <div class="review_row" :key="index">
@@ -70,7 +71,7 @@ export default {
 <style lang="scss" scoped>
   .review {
     max-width: 1140px;
-    margin: 150px auto 50px;
+    margin: 100px auto 50px;
 
     &_row {
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);

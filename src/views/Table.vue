@@ -1,9 +1,8 @@
 <template lang="html">
   <div class="table">
     <BreadCrumbs #breadcrubs>Таблица с игрушками</BreadCrumbs>
-
+    <h2 class="title">Таблица с игрушками</h2>
     <table>
-      <caption>Table Example</caption>
       <thead>
         <tr class="">
           <th class="">Название</th>

@@ -1,7 +1,10 @@
 <template>
 <footer class="footer">
   <div class="footer_info">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat labore asperiores quod distinctio ex sequi quis sit ducimus sed cum. Minus ea modi iste quaerat, dolorum ullam illo. Placeat, dignissimos.</p>
+    <div>
+      <p>Данный сайт католог создан в целях ознакомления с моими работами.</p>
+      <p>На данной сайте размещены осовные мои работы, некоторые положительные отзывы клиентов, отрицательных пока не было. Таблица с информацией о каждой игрушке, для облегчения сделать заказ. Краткая об авторе.</p>
+    </div>
   </div>
   <div class="footer_inner">
     <p class="footer_text">Игрушки плюша / © Copyright by <a href="http://gkhabada.h1n.ru" target="_blank">gkhabada</a> {{new Date().getFullYear()}}г.</p>
@@ -9,9 +12,8 @@
       <router-link :to="{ name: 'home'}">Главная</router-link>
       <router-link :to="{ name: 'portfolio'}">Портфолио</router-link>
       <router-link :to="{ name: 'reviews'}">Отзывы</router-link>
-      <router-link :to="{ name: 'about'}">Обо мне</router-link>
       <router-link :to="{ name: 'table'}">Таблица с игрушками</router-link>
-      <a href="">CONTACTS</a>
+      <router-link :to="{ name: 'about'}">Обо мне</router-link>
     </div>
   </div>
 </footer>

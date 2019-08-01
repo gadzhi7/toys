@@ -2,9 +2,9 @@
   <div class="">
     <BreadCrumbs #breadcrubs>Игрушки</BreadCrumbs>
     <div class="portfolio">
-      <h1>Portfolio</h1>
+      <h1 class="title">Portfolio</h1>
       <ul class="portfolio_toys" v-if="toys.length">
-        <li v-for="(toy, index) in toys"
+        <li v-for="(toy, index) in toys.reverse()"
           :key="index"
         >
           <img :src="toy.image" alt="name">
@@ -42,13 +42,7 @@ export default {
   },
   data () {
     return {
-      toys: [
-        {
-          name: 'тест',
-          text: 'тестовое описание',
-          image: 'https://handmade-shop.cmsmasters.net/wp-content/uploads/2015/05/2-1-580x480.jpg'
-        }
-      ]
+      toys: []
     }
   },
   components: {

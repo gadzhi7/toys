@@ -157,4 +157,32 @@ export default {
     }
   }
 
+  .title {
+    font-family: 'Prata', serif;
+    font-size: 30px;
+    font-weight: 100;
+    text-align: center;
+    width: fit-content;
+    padding: 0 80px;
+    margin: 30px auto;
+    position: relative;
+
+    &:after, &:before {
+      content: '';
+      width: 50px;
+      height: 1px;
+      background-color: #dbdbdb;
+      position: absolute;
+      top: 15px;
+    }
+
+    &:after {
+      right: 0;
+    }
+
+    &:before {
+      left: 0;
+    }
+  }
+
 </style>
