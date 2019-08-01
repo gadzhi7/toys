@@ -1,6 +1,8 @@
 <template>
 <div class="header">
-  <img src="./../assets/logo.png" alt="логотип">
+  <router-link :to="{ name: 'home'}">
+    <img src="./../assets/logo.png" alt="логотип">
+  </router-link>
 </div>
 </template>
 

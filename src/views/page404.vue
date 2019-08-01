@@ -8,7 +8,9 @@
           <p>Такая страница не существует либо она была удалена.</p>
           <router-link class="button" :to="{ name: 'home'}">На главную</router-link>
         </div>
-        <img src="./../assets/404.png" ref="jellyfish" alt="медуза">
+        <div class="jellyfish">
+          <img src="./../assets/404.png" ref="jellyfish" alt="медуза">
+        </div>
       </div>
     </div>
     <Instagram></Instagram>
@@ -20,13 +22,16 @@ import Instagram from './../components/Instagram'
 
 export default {
   name: 'page404',
+  data () {
+    return {}
+  },
   components: {
     Instagram
   },
   methods: {
     mouseMove (e) {
-      console.log(this.$refs.jellyfish, e.clientX)
-
+      this.$refs.jellyfish.style.left = (e.clientX / 7) + 'px'
+      this.$refs.jellyfish.style.top = (e.clientY / 12) + 'px'
     }
   }
 }
@@ -63,11 +68,17 @@ export default {
       }
     }
 
-    img {
+    .jellyfish {
       position: absolute;
       right: 200px;
-      top: 0;
       height: 500px;
+      top: 0;
+    }
+
+    img {
+      transition: 0.2s;
+      position: relative;
+      height: 100%;
     }
   }
 </style>

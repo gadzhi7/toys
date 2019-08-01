@@ -10,7 +10,7 @@
       <router-link :to="{ name: 'portfolio'}">Портфолио</router-link>
       <router-link :to="{ name: 'reviews'}">Отзывы</router-link>
       <router-link :to="{ name: 'about'}">Обо мне</router-link>
-      <a href="">SHOP</a>
+      <router-link :to="{ name: 'table'}">Таблица с игрушками</router-link>
       <a href="">CONTACTS</a>
     </div>
   </div>

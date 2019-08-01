@@ -73,6 +73,10 @@ export default {
   @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap&subset=cyrillic');
   @import url('https://fonts.googleapis.com/css?family=Prata&display=swap');
 
+  $grey: #d68662;
+  $dark_text: #272220;
+  $loght_text: #7b726f;
+
   html, body {
     min-height: 100vh;
     height: 100%;
@@ -139,6 +143,7 @@ export default {
     padding: 0 42px;
     display: block;
     width: fit-content;
+    cursor: pointer;
     text-transform: uppercase;
     border: 1px solid #d68662;
     transition: 0.3s;

@@ -7,6 +7,7 @@
       <router-link :to="{ name: 'admin'}">Ссылки админки</router-link>
       <router-link :to="{ name: 'addtoys'}">Портфолио</router-link>
       <router-link :to="{ name: 'adminreviews'}">Отзывы</router-link>
+      <router-link :to="{ name: 'admintable'}">Таблица с игрушками</router-link>
       <a href="">CONTACTS</a>
     </div>
   </div>

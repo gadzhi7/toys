@@ -1,7 +1,6 @@
 <template lang="html">
-  <div class="table">
-    <BreadCrumbs #breadcrubs>Таблица с игрушками</BreadCrumbs>
-
+  <div class="admintable">
+    Заполнение таблицы
     <table>
       <caption>Table Example</caption>
       <thead>
@@ -39,17 +38,12 @@
 </template>
 
 <script>
-import BreadCrumbs from './../components/BreadCrumbs'
-
 export default {
-  name: 'Table',
-  components: {
-    BreadCrumbs
-  }
 }
 </script>
 
 <style lang="scss" scoped>
+
   table {
     max-width: 1140px;
     width: 100%;
