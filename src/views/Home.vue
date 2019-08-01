@@ -19,13 +19,10 @@
     </div>
     <router-link class="button" :to="{ name: 'portfolio'}">Показать все</router-link>
   </div>
-  <Instagram></Instagram>
 </div>
 </template>
 
 <script>
-import Instagram from './../components/Instagram'
-
 export default {
   name: 'Home',
   data () {
@@ -53,9 +50,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Instagram
   }
 }
 </script>
@@ -76,14 +70,12 @@ export default {
       display: block;
       width: fit-content;
       text-transform: uppercase;
-      border: 1px solid #d68662;
-      transition: 0.3s;
+      border: 1px s
 
       &:hover {
         transition: 0.3s;
         color: #272220;
         background-color: transparent;
-        border-color: #c4c4c4;
       }
     }
 
