@@ -106,7 +106,7 @@
     shadowLight.shadow.mapSize.height = 2048;
 
     // Add the lights to the scene
-
+    console.log(shadowLight)
     scene.add(shadowLight);
     scene.add(hemisphereLight);
 

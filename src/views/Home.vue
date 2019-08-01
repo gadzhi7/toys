@@ -65,28 +65,6 @@ export default {
     color: #272220;
     position: relative;
 
-    .button {
-      background-color: #d68662;
-      color: #fff;
-      text-decoration: none;
-      font-size: 13px;
-      line-height: 43px;
-      font-weight: bold;
-      padding: 0 42px;
-      display: block;
-      width: fit-content;
-      text-transform: uppercase;
-      border: 1px solid #d68662;
-      transition: 0.3s;
-
-      &:hover {
-        transition: 0.3s;
-        color: #272220;
-        background-color: transparent;
-        border-color: #c4c4c4;
-      }
-    }
-
     .banner {
       max-width: 1200px;
       height: 300px;
