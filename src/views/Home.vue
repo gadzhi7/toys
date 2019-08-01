@@ -7,6 +7,25 @@
     <h6>Оригинальные товары связанные с любовью</h6>
     <router-link class="button" :to="{ name: 'portfolio'}">Посмотреть</router-link>
   </div>
+  <div class="skills">
+    <h3>Скиллы <a href="https://handmade-shop.cmsmasters.net/counters-progress-bars/" target="_blank">ссылка</a></h3>
+    <div class="skills_items">
+      <div class="skills_item">
+        <p class="skill_count">
+          <span></span>
+        </p>
+        <p class="skill_text"></p>
+      </div>
+      <div class="skills_item">
+        <p class="skill_count"><span></span></p>
+        <p class="skill_text"></p>
+      </div>
+      <div class="skills_item">
+        <p class="skill_count"><span></span></p>
+        <p class="skill_text"></p>
+      </div>
+    </div>
+  </div>
   <div class="popular">
     <h5>заказать товары ручной работы</h5>
     <h2>Популярные</h2>
@@ -59,29 +78,6 @@ export default {
     color: #272220;
     position: relative;
 
-<<<<<<< HEAD
-    .button {
-      background-color: #d68662;
-      color: #fff;
-      text-decoration: none;
-      font-size: 13px;
-      line-height: 43px;
-      font-weight: bold;
-      padding: 0 42px;
-      display: block;
-      width: fit-content;
-      text-transform: uppercase;
-      border: 1px s
-
-      &:hover {
-        transition: 0.3s;
-        color: #272220;
-        background-color: transparent;
-      }
-    }
-
-=======
->>>>>>> b9dbf99ea4215b13c550599216d2c15bf29f6dd1
     .banner {
       max-width: 1200px;
       height: 300px;
