@@ -59,6 +59,7 @@ export default {
     color: #272220;
     position: relative;
 
+<<<<<<< HEAD
     .button {
       background-color: #d68662;
       color: #fff;
@@ -79,6 +80,8 @@ export default {
       }
     }
 
+=======
+>>>>>>> b9dbf99ea4215b13c550599216d2c15bf29f6dd1
     .banner {
       max-width: 1200px;
       height: 300px;
