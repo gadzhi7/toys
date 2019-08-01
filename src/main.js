@@ -10,6 +10,21 @@ Vue.config.productionTip = false
 // jquery
 window.$ = window.jQuery = require('jquery')
 
+router.beforeEach((to, from, next) => {
+  if (to.path.indexOf !== -1) {
+    let signIn = localStorage.getItem('signIn')
+    if (signIn === 'ILoveYou') {
+
+    }
+    console.log('to', to)
+    console.log('from', from)
+
+    next()
+  } else {
+    next()
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

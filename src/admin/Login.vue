@@ -1,14 +1,14 @@
 <template lang="html">
   <div>
-    <form action="/" class="login" method="post">
+    <form action="/" class="login" method="post" @submit.prevent="login">
       <p class="login_welcome" title="Неть">Привет, Хоточка!</p>
       <div>
         <label for="login_login" title="Обязательное поле">Логин: <span>*</span></label>
-        <input type="text" id="login_login" required title="Ну тот логин, который я тебе говорил.">
+        <input type="email" id="login_login" v-model="email" required title="Ну тот логин, который я тебе говорил.">
       </div>
       <div>
         <label for="login_password" title="Обязательное поле">Пароль: <span>*</span></label>
-        <input type="password" id="login_password" required title="Ну вспомни даа, пароль.">
+        <input type="password" id="login_password" v-model="password" required title="Ну вспомни даа, пароль.">
       </div>
       <button type="submit" class="button">Войти</button>
     </form>
@@ -16,12 +16,33 @@
 </template>
 
 <script>
+import firebase from 'firebase/app'
+
 export default {
   name: 'login',
   data () {
     return {
-      login: null,
+      email: null,
       password: null
+    }
+  },
+  methods: {
+    login () {
+      firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+        .then(function (data) {
+          if (data.operationType === 'signIn') {
+            localStorage.setItem('signIn', 'ILoveYou')
+          } else {
+            alert('Неудалось войти.')
+          }
+        })
+        .catch(function (error) {
+          if (error.code === 'auth/wrong-password') {
+            alert('Неверный пароль.')
+          } else {
+            alert(error.message)
+          }
+        })
     }
   }
 }

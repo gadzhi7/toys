@@ -57,7 +57,7 @@ export default new Router({
       component: AddToys
     },
     { path: '/table', name: 'table', component: () => import('@/views/Table') },
-    { path: '/smile', name: 'smile', component: () => import('@/views/Eyes') },
+    { path: '/eyes', name: 'smile', component: () => import('@/views/Eyes') },
     { path: '/login', name: 'login', component: () => import('@/admin/Login') },
     { path: '/admin/table', name: 'admintable', component: () => import('@/admin/AdminTable') },
     { path: '/404', name: '404', component: () => import('@/views/Page404') },

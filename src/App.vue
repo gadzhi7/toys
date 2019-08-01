@@ -26,6 +26,7 @@ import AdminFooter from './admin/AdminFooter'
 import firebase from 'firebase/app'
 import 'firebase/database'
 import 'firebase/storage'
+import 'firebase/auth'
 
 firebase.initializeApp({
   apiKey: 'AIzaSyAjUTnfPQ9vvVGhIyKNXePXkx3uNqdK3GY',
