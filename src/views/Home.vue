@@ -36,11 +36,12 @@
     <h5>заказать товары ручной работы</h5>
     <h2 class="title">Последние работы</h2>
     <div class="popular_items">
-      <div class="popular_item" v-for="(toy, index) in toys.reverse().slice(0, 4)" :key="index">
+      <!-- Исправить loop -->
+      <!-- <div class="popular_item" v-for="(toy, index) in toys.reverse().slice(0, 4)" :key="index">
         <img :src="toy.image" :alt="toy.name">
         <h3 class="popular_item_name">{{toy.name}}</h3>
         <p class="popular_item_price">{{toy.text.length > 40 ? toy.text.substring(0, 40) + '...' : toy.text }}</p>
-      </div>
+      </div> -->
     </div>
     <router-link class="button" :to="{ name: 'portfolio'}">Показать все</router-link>
   </div>
