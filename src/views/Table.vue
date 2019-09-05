@@ -44,6 +44,10 @@ export default {
   name: 'Table',
   components: {
     BreadCrumbs
+  },
+  created () {
+    this.$store.state.loading = true
+    this.$store.state.loading = false
   }
 }
 </script>

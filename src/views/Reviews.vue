@@ -30,6 +30,7 @@ const reviewsRef = firebase.database().ref('reviews')
 export default {
   name: 'Reviews',
   created () {
+    this.$store.state.loading = true
     reviewsRef.once('value', reviews => {
       reviews.forEach(review => {
         this.reviews.push({
@@ -39,6 +40,8 @@ export default {
           image: review.child('image').val()
         })
       })
+
+      this.$store.state.loading = false
     })
   },
   data () {

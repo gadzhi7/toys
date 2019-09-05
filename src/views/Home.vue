@@ -63,6 +63,7 @@ export default {
     }
   },
   created () {
+    this.$store.state.loading = true
     toysRef.once('value', toys => {
       toys.forEach(toy => {
         this.toys.push({
@@ -74,6 +75,7 @@ export default {
       })
 
       this.toys = this.toys.reverse().slice(0, 4)
+      this.$store.state.loading = false
     })
   },
   components: {

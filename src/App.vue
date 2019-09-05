@@ -14,6 +14,7 @@
   </section>
   <Footer v-if="!admin"></Footer>
   <AdminFooter v-else></AdminFooter>
+  <Loader v-show="$store.state.loading"/>
 </div>
 </template>
 
@@ -22,6 +23,7 @@ import Header from './components/Header'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import AdminFooter from './admin/AdminFooter'
+import Loader from './components/Loader'
 
 import firebase from 'firebase/app'
 import 'firebase/database'
@@ -48,7 +50,8 @@ export default {
     Header,
     Navbar,
     Footer,
-    AdminFooter
+    AdminFooter,
+    Loader
   },
   mounted () {
     window.location.pathname.indexOf('admin') !== -1 ? this.admin = true : this.admin = false

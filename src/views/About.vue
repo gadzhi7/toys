@@ -61,6 +61,12 @@ export default {
   name: 'about',
   components: {
     BreadCrumbs
+  },
+  created () {
+    this.$store.state.loading = true
+  },
+  mounted () {
+    this.$store.state.loading = false
   }
 }
 </script>

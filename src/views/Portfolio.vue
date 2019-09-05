@@ -29,6 +29,7 @@ const toysRef = firebase.database().ref('toys')
 export default {
   name: 'Portfolio',
   created () {
+    this.$store.state.loading = true
     toysRef.once('value', toys => {
       toys.forEach(toy => {
         this.toys.push({
@@ -40,6 +41,7 @@ export default {
       })
 
       this.toys = this.toys.reverse()
+      this.$store.state.loading = false
     })
   },
   data () {
