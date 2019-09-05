@@ -4,7 +4,7 @@
     <div class="portfolio">
       <h1 class="title">Portfolio</h1>
       <ul class="portfolio_toys" v-if="toys.length">
-        <li v-for="(toy, index) in toys.reverse()"
+        <li v-for="(toy, index) in toys"
           :key="index"
         >
           <img :src="toy.image" alt="name">
@@ -38,6 +38,8 @@ export default {
           image: toy.child('image').val()
         })
       })
+
+      this.toys = this.toys.reverse()
     })
   },
   data () {

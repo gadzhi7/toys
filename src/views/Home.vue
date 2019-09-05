@@ -37,11 +37,11 @@
     <h2 class="title">Последние работы</h2>
     <div class="popular_items">
       <!-- Исправить loop -->
-      <!-- <div class="popular_item" v-for="(toy, index) in toys.reverse().slice(0, 4)" :key="index">
+      <div class="popular_item" v-for="(toy, index) in toys" :key="index">
         <img :src="toy.image" :alt="toy.name">
         <h3 class="popular_item_name">{{toy.name}}</h3>
         <p class="popular_item_price">{{toy.text.length > 40 ? toy.text.substring(0, 40) + '...' : toy.text }}</p>
-      </div> -->
+      </div>
     </div>
     <router-link class="button" :to="{ name: 'portfolio'}">Показать все</router-link>
   </div>
@@ -72,6 +72,8 @@ export default {
           image: toy.child('image').val()
         })
       })
+
+      this.toys = this.toys.reverse().slice(0, 4)
     })
   },
   components: {
