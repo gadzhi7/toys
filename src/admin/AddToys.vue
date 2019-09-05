@@ -20,7 +20,7 @@
       <div>
           <ul class="list" v-if="toys.length">
               <li
-                  v-for="(toy, index) in toys"
+                  v-for="(toy, index) in toysReverse"
                   :key="index"
                   @dblclick="changeToy(toy.id)"
                   >
@@ -192,11 +192,17 @@ export default {
         totalBytes: snap.totalBytes
       })
     }
+  },
+  computed: {
+    /* eslint-disable */
+    toysReverse () {
+      return this.toys.reverse()
+    }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .add_toys {
       max-width: 1200px;
       margin: 0 auto;
@@ -279,7 +285,7 @@ export default {
 
     li {
       display: flex;
-      width: 49%;
+      width: 100%;
       margin-bottom: 20px;
       border: 1px solid #ccc;
       position: relative;

@@ -52,7 +52,7 @@ $white: #fff;
   align-items: center;
   justify-content: center;
   margin: 0;
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   background: $white;
   overflow: hidden;

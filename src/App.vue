@@ -83,13 +83,13 @@ export default {
 
   html, body {
     min-height: 100vh;
-    height: 100%;
+    // height: 100%;
   }
 
   #app {
     font-family: 'Roboto', sans-serif;
     min-height: 100vh;
-    height: 100%;
+    // height: 100%;
     color: #272220;
     background-color: rgba(255, 245, 234, 0.2);
     display: flex;

@@ -5,8 +5,8 @@
         <form v-if="reviews" @submit="savereview()">
             <h3>Добавить</h3>
             <div class="add_new_form">
-                <input class="add_new_name" min="3" max="30" type="text" v-model="review.name" placeholder="Название " required />
-                <textarea class="add_new_text" min="15" max="150" v-model="review.text" placeholder="Описание " required></textarea>
+                <input class="add_new_name" min="3" max="30" type="text" v-model="review.name" placeholder="Имя" required />
+                <textarea class="add_new_text" min="15" max="150" v-model="review.text" placeholder="Текст отзыва" required></textarea>
                 <label for="add_new_photo" class="add_new_photo" ref="photoLabel">Загрузите фото</label>
                 <input id="add_new_photo" type="file" name="" ref="photoInput" @change="processFile ($event)" hidden>
             </div>
@@ -20,7 +20,7 @@
       <div>
           <ul class="list" v-if="reviews.length">
               <li
-                  v-for="(review, index) in reviews"
+                  v-for="(review, index) in reviewsReverse"
                   :key="index"
                   @dblclick="changereview(review.id)"
                   >
@@ -182,11 +182,17 @@ export default {
         totalBytes: snap.totalBytes
       })
     }
+  },
+  computed: {
+    /* eslint-disable */
+    reviewsReverse () {
+      return this.reviews.reverse()
+    }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .add_reviews {
       max-width: 1200px;
       margin: 0 auto;
@@ -266,10 +272,11 @@ export default {
     justify-content: space-around;
     list-style: none;
     padding: 0;
+    margin-top: 50px;
 
     li {
       display: flex;
-      width: 49%;
+      width: 100%;
       margin-bottom: 20px;
       border: 1px solid #ccc;
       position: relative;

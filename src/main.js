@@ -17,7 +17,7 @@ router.beforeEach((to, from, next) => {
     if (signIn === 'ILoveYou') {
       next()
     } else {
-      next('/')
+      next('/404')
     }
   } else {
     next()

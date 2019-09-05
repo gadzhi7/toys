@@ -3,7 +3,7 @@
   <div class="footer_inner">
     <p class="footer_text">Игрушки плюша / © Copyright by <a href="http://gkhabada.h1n.ru" target="_blank">gkhabada</a> {{new Date().getFullYear()}}г.</p>
     <div class="footer_links">
-      <router-link :to="{ name: 'home'}">Главная</router-link>
+      <!-- <router-link :to="{ name: 'home'}">Главная</router-link> -->
       <router-link :to="{ name: 'admin'}">Ссылки админки</router-link>
       <router-link :to="{ name: 'addtoys'}">Портфолио</router-link>
       <router-link :to="{ name: 'adminreviews'}">Отзывы</router-link>
