@@ -2,7 +2,7 @@
   <div class="">
     <BreadCrumbs #breadcrubs>Игрушки</BreadCrumbs>
     <div class="portfolio">
-      <h1 class="title">Portfolio</h1>
+      <h1 class="title">Мои работы</h1>
       <ul class="portfolio_toys" v-if="toys.length">
         <li v-for="(toy, index) in toys"
           :key="index"
@@ -124,6 +124,16 @@ export default {
   }
 
   @media (max-width: 480px) {
+
+    h1 {
+      font-size: 24px;
+      padding: 0 50px;
+
+      &:after, &:before {
+        width: 35px;
+        top: 12px;
+      }
+    }
 
     .portfolio_toys li {
       width: 100%;

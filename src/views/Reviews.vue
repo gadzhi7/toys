@@ -1,7 +1,7 @@
 <template lang="html">
   <div class=".reviews_wrapper">
     <BreadCrumbs #breadcrubs>Отзывы</BreadCrumbs>
-    <h2 class="title">Отзывы</h2>
+    <h1 class="title">Отзывы клиентов</h1>
     <div class="review" v-if="reviews.length">
       <template v-for="(row, index) in groupedItems">
         <div class="review_row" :key="index">
@@ -213,6 +213,16 @@ export default {
   }
 
   @media (max-width: 480px) {
+
+    h1 {
+      font-size: 24px;
+      padding: 0 40px;
+
+      &:after, &:before {
+        width: 30px;
+        top: 12px;
+      }
+    }
 
     .review_row {
       flex-wrap: wrap;

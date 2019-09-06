@@ -1,5 +1,8 @@
 <template lang="html">
-  <div class="eyes"></div>
+  <div>
+    <div class="eyes"></div>
+    <h2>Содержимое данной страницы можно увидеть только через компьютер <br> <i>(размер экрана > 992px)</i></h2>
+  </div>
 </template>
 
 <script>
@@ -158,6 +161,37 @@ export default {
     text-align: center;
     background-color: rgba(#d68662, 0.1);
     cursor: none;
+  }
+
+  h2 {
+    display: none;
+  }
+
+
+  @media (max-width: 992px) {
+
+    .eyes {
+      display: none;
+    }
+
+    h2 {
+      max-width: 500px;
+      text-align: center;
+      line-height: 1.7;
+      display: block;
+      margin: 50px auto;
+      padding: 0 20px;
+      font-size: 26px;
+    }
+
+  }
+
+  @media (max-width: 480px) {
+
+    h2 {
+      font-size: 20px;
+    }
+
   }
 
 </style>

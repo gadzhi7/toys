@@ -1,33 +1,35 @@
 <template lang="html">
   <div class="table">
     <BreadCrumbs #breadcrubs>Таблица с игрушками</BreadCrumbs>
-    <h2 class="title">Таблица с игрушками</h2>
-    <table>
-      <thead>
-        <tr class="">
-          <th class="">Название</th>
-          <th class="">Описание</th>
-          <th class="">Цена</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(row, index) in table" :key="index">
-          <td class="">{{row.name}}</td>
-          <td class="">{{row.description}}</td>
-          <td class="">от {{row.price}}₽</td>
-        </tr>
-        <tr v-if="!table.length">
-          <td colspan="4"><b>Ещё ничего не добавлено</b></td>
-        </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td class="">Название</td>
-            <td class="">Описание</td>
-            <td class="">Цена</td>
+    <h1 class="title">Описание работ</h1>
+    <div class="table_wrapper">
+      <table>
+        <thead>
+          <tr class="">
+            <th class="">Название</th>
+            <th class="">Описание</th>
+            <th class="">Цена</th>
           </tr>
-        </tfoot>
-      </table>
+        </thead>
+        <tbody>
+          <tr v-for="(row, index) in table" :key="index">
+            <td class="">{{row.name}}</td>
+            <td class="">{{row.description}}</td>
+            <td class="">от {{row.price}}₽</td>
+          </tr>
+          <tr v-if="!table.length">
+            <td colspan="4"><b>Ещё ничего не добавлено</b></td>
+          </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td class="">Название</td>
+              <td class="">Описание</td>
+              <td class="">Цена</td>
+            </tr>
+          </tfoot>
+        </table>
+    </div>
   </div>
 </template>
 
@@ -65,11 +67,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .table_wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin: 50px auto;
+  }
+
   table {
-    max-width: 1140px;
+    max-width: 1200px;
+    min-width: 767px;
+    overflow-x: auto;
     width: 100%;
     text-align: center;
-    margin: 50px auto;
     border-spacing: 0;
 
     th, td {
@@ -96,6 +105,19 @@ export default {
       border-top: 0;
     }
 
+  }
+
+  @media (max-width: 480px) {
+
+    h1 {
+      font-size: 24px;
+      padding: 0 50px;
+
+      &:after, &:before {
+        width: 35px;
+        top: 12px;
+      }
+    }
   }
 
 </style>
