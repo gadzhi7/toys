@@ -20,6 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
   .breadcrubs {
     width: calc(100% + 40px);
     position: relative;
@@ -65,4 +66,32 @@ export default {
       }
     }
   }
+
+  @media (max-width: 992px) {
+
+    .breadcrubs {
+      width: calc(100% + 30px);
+      left: -15px;
+    }
+
+  }
+
+  @media (max-width: 650px) {
+
+    .breadcrubs {
+      width: calc(100% + 20px);
+      left: -10px;
+    }
+
+  }
+
+  @media (max-width: 480px) {
+
+    .breadcrubs {
+      width: calc(100% + 10px);
+      left: -5px;
+    }
+
+  }
+
 </style>

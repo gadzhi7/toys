@@ -172,20 +172,70 @@ export default {
   width: 62px; /* 310 */
   height: 34px; /* 170 */
   position: absolute;
-  top: -29px;
   right: 4%;
   z-index: 0;
   pointer-events: none;
   transition: transform 0s;
-  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 60%);
   transition: 0.5s;
+  transform: scale(1.3);
+  top: -35px;
 }
 
 .bodymovin--hidden {
+  top: -29px;
+  transform: scale(1);
   transform: translateY(30px);
   transition: transform 0.55s cubic-bezier(0.6, -0.28, 0.735, 0.045);
   background: none;
   transition: 0.5s;
+}
+
+@media (max-width: 1200px) {
+
+  .instagram_wrapper {
+    height: 600px;
+    width: calc(100% + 30px);
+    left: -15px;
+  }
+
+  .instagram {
+    flex-wrap: wrap;
+
+    .instagram_link {
+      width: 33.33%;
+      height: 50%;
+    }
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .instagram_wrapper {
+    height: 600px;
+    width: calc(100% + 20px);
+    left: -10px;
+  }
+
+  .instagram {
+    flex-wrap: wrap;
+
+    .instagram_link {
+      width: 50%;
+      height: 33.33%;
+    }
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .instagram_wrapper {
+    width: calc(100% + 10px);
+    left: -5px;
+  }
+
 }
 
 </style>

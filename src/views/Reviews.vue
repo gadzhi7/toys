@@ -153,4 +153,95 @@ export default {
       }
     }
   }
+
+  @media (max-width: 992px) {
+
+    .review_row .review_item {
+      flex-wrap: wrap;
+
+      img {
+        display: block;
+      }
+
+      .review_block {
+        width: 100%;
+        padding-left: 0;
+      }
+    }
+
+  }
+
+  @media (max-width: 676px) {
+
+    .review {
+      margin-top: 50px;
+    }
+
+    .review_row {
+      flex-wrap: wrap;
+      border-bottom: 0;
+
+       .review_item {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-right: 0;
+        padding: 20px!important;
+
+        img {
+          display: block;
+        }
+
+        .review_block {
+          width: calc(100% - 80px);
+          padding-left: 15px;
+
+          .review_name {
+            line-height: 30px;
+          }
+        }
+      }
+
+      &:after {
+        content: none;
+      }
+
+      &:last-child .review_item {
+        border-bottom: 0;
+      }
+
+    }
+  }
+
+  @media (max-width: 480px) {
+
+    .review_row {
+      flex-wrap: wrap;
+      border-bottom: 0;
+
+       .review_item {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-right: 0;
+        padding: 20px!important;
+
+        img {
+          display: block;
+          margin: 0 auto 15px;
+        }
+
+        .review_block {
+          text-align: center;
+          width: 100%;
+          padding-left: 0;
+
+          .review_name {
+            line-height: 30px;
+          }
+        }
+      }
+
+    }
+
+  }
+
 </style>

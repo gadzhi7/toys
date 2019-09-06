@@ -1,8 +1,12 @@
 <template>
-<nav class="navbar">
+  <nav class="navbar">
+  <div :class="['nav_links_mobile', {nav_links_active: mobile}]" @click="toggleMobileMenu($event)">
+    <img src="../assets/icons/open.svg" v-show="!mobile" alt="toggle menu">
+    <img src="../assets/icons/close.svg" v-show="mobile" alt="toggle menu">
+  </div>
   <div class="nav_soc">
     <!-- instagram -->
-    <a href="https://www.instagram.com/igrushki.plusha/" target="_blank" title="instagram">
+    <a href="https://www.instagram.com/toys_khatima/" target="_blank" title="instagram">
       <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m75 512h362c41.355469 0 75-33.644531 75-75v-362c0-41.355469-33.644531-75-75-75h-362c-41.355469 0-75 33.644531-75 75v362c0 41.355469 33.644531 75 75 75zm-45-437c0-24.8125 20.1875-45 45-45h362c24.8125 0 45 20.1875 45 45v362c0 24.8125-20.1875 45-45 45h-362c-24.8125 0-45-20.1875-45-45zm0 0"/><path d="m256 391c74.4375 0 135-60.5625 135-135s-60.5625-135-135-135-135 60.5625-135 135 60.5625 135 135 135zm0-240c57.898438 0 105 47.101562 105 105s-47.101562 105-105 105-105-47.101562-105-105 47.101562-105 105-105zm0 0"/><path d="m406 151c24.8125 0 45-20.1875 45-45s-20.1875-45-45-45-45 20.1875-45 45 20.1875 45 45 45zm0-60c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0"/></svg>
     </a>
     <!-- whatsapp -->
@@ -31,7 +35,7 @@
     </router-link>
 
   </div>
-  <div class="nav_links">
+  <div class="nav_links" ref="nav_links" @click="closeWhenMobile()">
     <router-link :to="{ name: 'home'}">Главная</router-link>
     <router-link :to="{ name: 'portfolio'}">Портфолио</router-link>
     <router-link :to="{ name: 'reviews'}">Отзывы</router-link>
@@ -39,7 +43,7 @@
     <router-link :to="{ name: 'about'}">Обо мне</router-link>
   </div>
   <div class="nav_basket">
-    <!-- <a href="">
+  <!-- <a href="">
       <svg enable-background="new 0 0 33 33" version="1.1" viewBox="0 0 33 33" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m28.313 33h-23.625c-0.137 0-0.268-0.056-0.362-0.155s-0.144-0.232-0.138-0.369l1.125-23.625c0.013-0.267 0.232-0.476 0.5-0.476h21.375c0.267 0 0.487 0.209 0.5 0.476l1.125 23.625c6e-3 0.137-0.043 0.27-0.138 0.369s-0.226 0.155-0.362 0.155zm-23.101-1h22.576l-1.077-22.625h-20.422l-1.077 22.625z"/><path d="m21.905 11.375c-0.276 0-0.5-0.224-0.5-0.5v-4.97c0-2.704-2.2-4.905-4.905-4.905s-4.905 2.201-4.905 4.905v4.97c0 0.276-0.224 0.5-0.5 0.5s-0.5-0.224-0.5-0.5v-4.97c0-3.256 2.649-5.905 5.905-5.905s5.905 2.649 5.905 5.905v4.97c0 0.276-0.223 0.5-0.5 0.5z"/></svg>
       <span>0</span></a>
     <a href=""></a>
@@ -56,7 +60,24 @@ export default {
   name: 'Navbar',
   data () {
     return {
-
+      mobile: false
+    }
+  },
+  methods: {
+    toggleMobileMenu (e) {
+      this.mobile = !this.mobile
+      if (this.mobile) {
+        this.$refs.nav_links.style.display = 'flex'
+        document.body.style.overflow = 'hidden'
+      } else {
+        this.$refs.nav_links.style.display = 'none'
+        document.body.style.overflow = ''
+      }
+    },
+    closeWhenMobile () {
+      if (this.mobile) {
+        this.toggleMobileMenu()
+      }
     }
   }
 }
@@ -77,8 +98,13 @@ export default {
     flex: 0 0 auto;
   }
 
+  .nav_links_mobile {
+    display: none;
+  }
+
   .nav_soc {
     display: flex;
+    width: 150px;
   }
 
   .nav_soc a {
@@ -116,8 +142,10 @@ export default {
   }
 
   .nav_basket {
-    display: flex;
+    display: none;
+    // display: flex;
     align-items: center;
+    width: 150px;
 
     a {
       color: #272220;
@@ -137,6 +165,95 @@ export default {
   a.router-link-exact-active {
     color: #d68662;
     transition: 0.3s;
+  }
+
+  @media (max-width: 1000px) {
+    .navbar {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      height: auto;
+    }
+
+    .nav_soc {
+      order: 3;
+      width: 90%;
+      text-align: center;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .nav_links {
+      order: 1;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    .nav_basket {
+      order: 2;
+      width: 90%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 700px) {
+
+    .navbar {
+      padding: 0 20px;
+    }
+
+    .nav_links {
+      z-index: 5;
+      margin: 0;
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      min-height: 100vh;
+      overflow-x: auto;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.7);
+      box-sizing: border-box;
+      justify-content: center;
+
+      a {
+        margin: 13px;
+      }
+    }
+
+    .nav_links_mobile {
+        display: block;
+        width: 20px;
+        height: 20px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+    }
+
+    .nav_links_active {
+      transform: scale(1.3);
+      position: fixed;
+      right: 30px;
+      z-index: 6;
+      top: 30px;
+    }
+
+  }
+
+  @media (max-width: 480px) {
+
+    .navbar {
+      padding: 0 10px;
+    }
+
   }
 
 </style>

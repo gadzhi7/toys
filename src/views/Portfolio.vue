@@ -28,6 +28,9 @@ const toysRef = firebase.database().ref('toys')
 
 export default {
   name: 'Portfolio',
+  components: {
+    BreadCrumbs
+  },
   created () {
     this.$store.state.loading = true
     toysRef.once('value', toys => {
@@ -48,14 +51,12 @@ export default {
     return {
       toys: []
     }
-  },
-  components: {
-    BreadCrumbs
   }
 }
 </script>
 
 <style lang="scss" scoped>
+
   .portfolio {
     max-width: 1200px;
     margin: 0 auto 50px;
@@ -65,6 +66,7 @@ export default {
       justify-content: space-around;
       flex-wrap: wrap;
       list-style: none;
+      padding: 0;
 
       li {
         width: 24%;
@@ -96,4 +98,37 @@ export default {
       }
     }
   }
+
+  @media (max-width: 1200px) {
+
+    .portfolio_toys li {
+      width: 33%;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+
+    .portfolio_toys li {
+      width: 48%;
+    }
+
+  }
+
+  @media (max-width: 600px) {
+
+    .portfolio_toys li {
+      width: 80%;
+    }
+
+  }
+
+  @media (max-width: 480px) {
+
+    .portfolio_toys li {
+      width: 100%;
+    }
+
+  }
+
 </style>

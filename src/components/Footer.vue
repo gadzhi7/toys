@@ -2,12 +2,12 @@
 <footer class="footer">
   <div class="footer_info">
     <div>
-      <p>Данный сайт католог создан в целях ознакомления с моими работами.</p>
-      <p>На данной сайте размещены осовные мои работы, некоторые положительные отзывы клиентов, отрицательных пока не было. Таблица с информацией о каждой игрушке, для облегчения сделать заказ. Краткая об авторе.</p>
+      <p>Данный сайт каталог создан в целях ознакомления с моими работами.</p>
+      <p>На данном сайте размещены основные мои работы, некоторые положительные отзывы клиентов, отрицательных пока не было. Таблица с информацией о каждой игрушке, для облегчения сделать заказ. Краткая об авторе.</p>
     </div>
   </div>
   <div class="footer_inner">
-    <p class="footer_text">Игрушки плюша / © Copyright by <a href="http://gkhabada.h1n.ru" target="_blank">gkhabada</a> {{new Date().getFullYear()}}г.</p>
+    <p class="footer_text"><span>Игрушки плюша / </span> © Copyright by <a href="http://gkhabada.h1n.ru" target="_blank">gkhabada</a> {{new Date().getFullYear()}}г.</p>
     <div class="footer_links">
       <router-link :to="{ name: 'home'}">Главная</router-link>
       <router-link :to="{ name: 'portfolio'}">Портфолио</router-link>
@@ -28,7 +28,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 
 .footer_info {
   min-height: 200px;
@@ -96,6 +96,27 @@ export default {
 a.router-link-exact-active {
   opacity: 1;
   transition: 0.3s;
+}
+
+@media (max-width: 1000px) {
+
+  .footer .footer_inner .footer_links {
+    display: none;
+  }
+
+  .footer_text {
+    text-align: center;
+    margin-left:  auto;
+    margin-right: auto;
+    line-height: 1.3;
+  }
+
+}
+
+@media (max-width: 460px) {
+  .footer_text span {
+    display: block;
+  }
 }
 
 </style>

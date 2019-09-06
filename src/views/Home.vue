@@ -1,11 +1,12 @@
 <template>
 <div class="home">
   <h1>Игрушки ручной работы</h1>
-  <!-- таблица,
+  <!--
   скиллс,
   адаптив,
   заполнить обо мне,
-  текст в футере, -->
+  текст в футере,
+ -->
   <div class="banner">
     <img src="" alt="">
     <h5>Игрушки и другие товары ручной работы</h5>
@@ -84,6 +85,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
   .home {
     color: #272220;
     position: relative;
@@ -118,7 +120,7 @@ export default {
 
     .banner {
       max-width: 1200px;
-      height: 300px;
+      min-height: 300px;
       margin: 0 auto 70px;
       background-image: url('https://handmade-shop.cmsmasters.net/wp-content/uploads/2016/12/3.jpg');
       background-position: center;
@@ -199,4 +201,88 @@ export default {
 
     }
   }
+
+  @media (max-width: 1200px) {}
+
+  @media (max-width: 992px) {
+    .home {
+
+      h1 {
+        font-size: 36px;
+        padding: 0 80px;
+        &:after, &:before {
+          top: 18px;
+          width: 60px;
+        }
+      }
+
+      .popular_items {
+        justify-content: space-between;
+
+        .popular_item {
+          width: 48%;
+        }
+      }
+
+    }
+  }
+
+  @media (max-width: 650px) {
+    .home {
+
+      h1 {
+        font-size: 28px;
+        padding: 0 50px;
+        &:after, &:before {
+          top: 14px;
+          width: 40px;
+        }
+      }
+
+      h2 {
+        font-size: 24px;
+        padding: 0 30px;
+        &:after, &:before {
+          top: 12px;
+          width: 50px;
+        }
+      }
+
+      .popular_items {
+        justify-content: center;
+
+        .popular_item {
+          width: 80%;
+        }
+      }
+
+    }
+  }
+
+  @media (max-width: 480px) {
+    .home {
+
+      h1 {
+        font-size: 24px;
+        padding: 0 20px;
+        &:after, &:before {
+          content: none;
+        }
+      }
+
+      h2 {
+        font-size: 20px;
+        padding: 0 20px;
+        &:after, &:before {
+          content: none;
+        }
+      }
+
+      .popular_items .popular_item {
+        width: 100%;
+      }
+
+    }
+  }
+
 </style>

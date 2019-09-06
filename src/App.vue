@@ -188,4 +188,22 @@ export default {
     }
   }
 
+    @media (max-width: 992px) {
+      section {
+        padding: 0 15px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      section {
+        padding: 0 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      section {
+        padding: 0 5px;
+      }
+    }
+
 </style>

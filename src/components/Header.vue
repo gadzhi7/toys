@@ -10,18 +10,20 @@
 export default {
   name: 'Header',
   data () {
-    return {
-
-    }
+    return {}
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .header {
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    img {
+      max-width: 100%;
+    }
   }
 </style>
