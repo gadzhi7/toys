@@ -80,6 +80,7 @@ export default {
     width: 100%;
     text-align: center;
     border-spacing: 0;
+    margin: 0 auto;
 
     th, td {
       padding: 15px 0;

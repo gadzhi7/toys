@@ -1,6 +1,6 @@
 <template>
 <div class="admin">
-  <router-link :to="{ name: 'home'}">Главная</router-link>
+  <!-- <router-link :to="{ name: 'home'}">Главная</router-link> -->
   <router-link :to="{ name: 'addtoys'}">Портфолио</router-link>
   <router-link :to="{ name: 'adminreviews'}">Отзывы</router-link>
   <router-link :to="{ name: 'admintable'}">Таблица с игрушками</router-link>

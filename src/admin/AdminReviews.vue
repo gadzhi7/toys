@@ -1,9 +1,9 @@
 <template>
   <div class="add_reviews">
-      <h1>Список</h1>
+      <h1>Отзывы</h1>
       <div class="add_new">
         <form v-if="reviews" @submit="savereview()">
-            <h3>Добавить</h3>
+            <h3>Добавить отзыв</h3>
             <div class="add_new_form">
                 <input class="add_new_name" min="3" max="30" type="text" v-model="review.name" placeholder="Имя" required />
                 <textarea class="add_new_text" min="15" max="150" v-model="review.text" placeholder="Текст отзыва" required></textarea>

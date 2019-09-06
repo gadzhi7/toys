@@ -1,9 +1,9 @@
 <template>
   <div class="add_toys">
-      <h1>Список</h1>
+      <h1>Портфолио</h1>
       <div class="add_new">
         <form v-if="toys" @submit="saveToy()">
-            <h3>Добавить</h3>
+            <h3>Добавить игрушку</h3>
             <div class="add_new_form">
                 <input class="add_new_name" min="3" max="30" type="text" v-model="toy.name" placeholder="Название " required />
                 <textarea class="add_new_text" min="15" max="200" v-model="toy.text" placeholder="Описание " required></textarea>

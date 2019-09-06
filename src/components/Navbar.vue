@@ -142,8 +142,7 @@ export default {
   }
 
   .nav_basket {
-    display: none;
-    // display: flex;
+    display: flex;
     align-items: center;
     width: 150px;
 
@@ -193,6 +192,7 @@ export default {
     }
 
     .nav_basket {
+      display: none;
       order: 2;
       width: 90%;
       text-align: center;
