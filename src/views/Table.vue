@@ -7,30 +7,24 @@
         <tr class="">
           <th class="">Название</th>
           <th class="">Описание</th>
-          <th class="">Примерный рост</th>
-          <th class="">Примерная цена</th>
+          <th class="">Цена</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="">Division</td>
-          <td class="">Division</td>
-          <td class="">Division</td>
-          <td class="">Division</td>
+        <tr v-for="(row, index) in table" :key="index">
+          <td class="">{{row.name}}</td>
+          <td class="">{{row.description}}</td>
+          <td class="">от {{row.price}}₽</td>
         </tr>
-        <tr>
-          <td class="">Division</td>
-          <td class="">Division</td>
-          <td class="">Division</td>
-          <td class="">Division</td>
+        <tr v-if="!table.length">
+          <td colspan="4"><b>Ещё ничего не добавлено</b></td>
         </tr>
         </tbody>
         <tfoot>
           <tr>
             <td class="">Название</td>
             <td class="">Описание</td>
-            <td class="">Примерный рост</td>
-            <td class="">Примерная цена</td>
+            <td class="">Цена</td>
           </tr>
         </tfoot>
       </table>
@@ -39,15 +33,33 @@
 
 <script>
 import BreadCrumbs from './../components/BreadCrumbs'
+import firebase from 'firebase/app'
+const tableRef = firebase.database().ref('table')
 
 export default {
   name: 'Table',
   components: {
     BreadCrumbs
   },
+  data () {
+    return {
+      table: []
+    }
+  },
   created () {
     this.$store.state.loading = true
-    this.$store.state.loading = false
+    tableRef.once('value', table => {
+      table.forEach(row => {
+        this.table.push({
+          id: row.ref.key,
+          name: row.child('name').val(),
+          description: row.child('description').val(),
+          price: row.child('price').val()
+        })
+      })
+
+      this.$store.state.loading = false
+    })
   }
 }
 </script>
