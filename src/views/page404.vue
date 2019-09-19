@@ -81,4 +81,27 @@ export default {
       height: 100%;
     }
   }
+
+  @media (max-width: 992px) {
+
+    .page404_info h1 {
+        font-size: 55px;
+    }
+
+    .page404 .jellyfish {
+        opacity: 0.5;
+    }
+
+  }
+
+  @media (max-width: 480px) {
+
+    .page404_info h1 {
+        width: auto;
+    }
+    .page404 .jellyfish {
+        display: none;
+    }
+  }
+
 </style>

@@ -4,6 +4,7 @@ import Home from '@/views/Home'
 import Reviews from '@/views/Reviews'
 import Portfolio from '@/views/Portfolio'
 import About from '@/views/About'
+import Links from '@/views/Links'
 
 // import Smile from '@/views/Smile'
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/about',
       name: 'about',
       component: About
+    },
+    {
+      path: '/links',
+      name: 'Links',
+      component: Links
     },
     // {
     //   path: '/smile',

@@ -202,8 +202,6 @@ export default {
     }
   }
 
-  @media (max-width: 1200px) {}
-
   @media (max-width: 992px) {
     .home {
 
