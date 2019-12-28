@@ -5,7 +5,6 @@ import Reviews from '@/views/Reviews'
 import Portfolio from '@/views/Portfolio'
 import About from '@/views/About'
 import Links from '@/views/Links'
-
 // import Smile from '@/views/Smile'
 
 import Admin from '@/admin/Admin'
